@@ -18,7 +18,7 @@ export default function TodoCard({todoId,title, description, done}) {
   async function toggleDone() {
     setToggling(true)
     try {
-      const resData = await collectionReference.record(address.toString()).call("toggleProgress", [todoId.toString(), JSON.stringify(!isDone)]);
+      await collectionReference.record(address.toString()).call("toggleProgress", [todoId.toString(), JSON.stringify(!isDone)]);
       setIsDone(prev => !isDone)
     } catch(err) {
       console.error(err)

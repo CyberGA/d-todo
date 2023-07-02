@@ -68,7 +68,6 @@ export default function NewTodo({func}) {
           // call smart contract
           
         func()
-         alert("Todo added successfully")
         }
        } finally {
         setIsLoading(false)
@@ -76,7 +75,7 @@ export default function NewTodo({func}) {
     }
 
     return (
-        <div className="flex items-center justify-center bg-black/40 absolute z-[99] top-0 bottom-0 left-0 right-0 p-5">
+        <div className="flex items-center justify-center bg-black/40 fixed z-[99] top-0 bottom-0 left-0 right-0 p-5">
             <div className="w-full bg-white py-4 px-5 rounded-md shadow-lg max-w-sm">
           <p className="font-exo text-black font-medium mb-1 text-right cursor-pointer" onClick={func} >Close</p>
         <div className="w-full flex flex-col gap-4 items-center mt-5">
